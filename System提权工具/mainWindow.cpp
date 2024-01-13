@@ -124,7 +124,7 @@ INT_PTR CALLBACK mainwindow(HWND hwnddlg, UINT umsg, WPARAM wparam, LPARAM lpara
 int WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd) {
 
 	BOOL btn = EnablePrivilege(SE_DEBUG_NAME, TRUE);
-
+	SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
 	DialogBox(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, mainwindow);
 	return 0;
 }
