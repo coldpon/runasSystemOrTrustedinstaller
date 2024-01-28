@@ -5,6 +5,7 @@ WCHAR g_FileName[MAX_PATH] = { 0 };
 
 void set_icon(HWND hwnddlg) {
 	HINSTANCE hInstance2 = ::GetModuleHandle(NULL);
+
 	HICON hiconbig = LoadIcon(hInstance2, MAKEINTRESOURCE(IDI_ICON1));
 	HICON hiconsmall = LoadIcon(hInstance2, MAKEINTRESOURCE(IDI_ICON1));
 	SendMessage(hwnddlg, WM_SETICON, ICON_BIG, (LONG64)hiconbig);
@@ -17,6 +18,7 @@ VOID setWindowIcon(HWND hwnddlg, DWORD bigiconCode, DWORD smalliconCode) {
 	SendMessage(hwnddlg, WM_SETICON, ICON_BIG, (LONG64)HiconBig);
 	SendMessage(hwnddlg, WM_SETICON, ICON_SMALL, (LONG64)HiconSmall);
 }
+
 
 INT_PTR CALLBACK mainwindow(HWND hwnddlg, UINT umsg, WPARAM wparam, LPARAM lparam) {
 	switch (umsg){
@@ -94,7 +96,7 @@ INT_PTR CALLBACK mainwindow(HWND hwnddlg, UINT umsg, WPARAM wparam, LPARAM lpara
 			return FALSE;
 		}
 		case IDC_BUTTON2: {//run      to system
-			
+
 			if (g_FileName[0] == NULL) {
 				MessageBox(hwnddlg, L"Please select a path or drag exe into the control", L"Tip", MB_OK);
 				return FALSE;
