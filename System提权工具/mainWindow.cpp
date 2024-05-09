@@ -144,8 +144,8 @@ INT_PTR CALLBACK mainwindow(HWND hwnddlg, UINT umsg, WPARAM wparam, LPARAM lpara
 int WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd) {
 
 	BOOL btn = EnablePrivilege(SE_DEBUG_NAME, TRUE);
-	// 设置进程为高DPI感知
-	HRESULT hr = SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
+	// 脡猫脰脙陆酶鲁脤脦陋赂脽DPI赂脨脰陋
+	HRESULT hr = SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);//Prevent app blurring
 	DialogBox(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, mainwindow);
 	return 0;
 }
